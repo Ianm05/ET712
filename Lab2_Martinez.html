@@ -3,101 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>conditional statementt</title>
+    <title>Conditional Statement</title>
 </head>
 <body>  
     <h1> Ian Martinez</h1>
     <script>
-        console.log(`\n------ Example 1: true/false in JS---------`)
-        //declaring variables
-        let day = true
-        let night = false
-        let n1 = 9
-        let n2 = -12
-        let n3 = "9" // string variable
-        let n4 = 9
+        console.log(`\n------ Example 1: true/false in JS ---------`)
+        // Declaring variables
+        let day = true;
+        let night = false;
+        let n1 = 9;
+        let n2 = -12;
+        let n3 = "9"; // String variable
+        let n4 = 9;
 
-        console.log(`Boolean Value of 'day' = ${day}`)
-        console.log(`is n1 less than or equal to n2? = ${n1<=n2}`)
-        console.log (`is n1 equal to n3 = ${n1==n3}`)//testing value
-        console.log (`is n1 equal to n3 = ${n1===n3}`) //testing value and the data type
-        console.log (`is n1 equal to n3 = ${n1===n4}`)
+        console.log(`Boolean Value of 'day' = ${day}`);
+        console.log(`Is n1 less than or equal to n2? = ${n1 <= n2}`);
+        console.log(`Is n1 equal to n3? = ${n1 == n3}`); // Testing value
+        console.log(`Is n1 equal to n3? = ${n1 === n3}`); // Testing value & type
+        console.log(`Is n1 equal to n4? = ${n1 === n4}`);
 
-        console.log('\n------Example 2: id statement in JS ------')
-        // declare variables 
+        console.log('\n------ Example 2: if statement in JS ------');
         let goodmood = true;
         let gotsleep = false;
 
-        if(goodmood === gotsleep){
-            console.log("Today is a good day!")
+        if (goodmood === gotsleep) {
+            console.log("Today is a good day!");
+        } else {
+            console.log("I am moody!");
+        }
 
+        let n5 = 10;
+        if (n5 < 0) {
+            console.log(`${n5} is negative`);
+        }
 
-            console.log("I am moody!")
-            let n5 = 10
-            // if statement to check if n5 is a negative number
-            if(n5<0){
-                console.log(`${n5} is negative`)
+        console.log('\n------ Example 3: if-else statement in JS ------');
+        if (n5 >= 0) {
+            console.log(`${n5} is positive`);
+        } else {
+            console.log(`${n5} is negative`);
+        }
 
-            }
-            console.log('\n------Example 3: if-else statement in JS ------')
-            // test if n5 is positive or negative
-            if(n5>=0){
-                console.log(`${n5} is postive`)
-            }
-            else{
-                console.log(`$n5 is negative`)
-            }  
-            
-            console.log('\n------- Example 4: if-else statement in JS---------')
-            //test two number
-            let x1 = 3
-            let x2 = 5
-            if(x1===x2){
-                console.log("The numbers are equal")
-            }
-            else if (x1>x2){
-                console.log(`${x1} is greater than ${x2}`)
-            }
-            else if (x1<x2){
-                console.log(`${x1} is less than ${x2}`)
-            }
-            else{
-                console.log("Can't be compared!")
-            }
+        console.log('\n------ Example 4: if-else-if statement in JS ---------');
+        let x1 = 3, x2 = 5;
+        if (x1 === x2) {
+            console.log("The numbers are equal");
+        } else if (x1 > x2) {
+            console.log(`${x1} is greater than ${x2}`);
+        } else {
+            console.log(`${x1} is less than ${x2}`);
+        }
 
+        console.log('\n----- Example 5: isNaN function in JS -------');
+        let userinput = prompt("Enter a number:");
+        if (isNaN(userinput)) { 
+            console.log(`${userinput} is NOT a number`);
+        } else {
+            console.log(`${userinput} is a number`);
+        }
+
+        console.log('\n----- Example 6: Logical operators in JS -------');
+        let password = prompt("Enter a password").trim().toLowerCase();
+        if (password.length >= 6 && password.indexOf(" ") === -1) {
+            console.log(`${password} is a valid password`);
+        } else {
+            console.log(`ERROR! ${password} is NOT in the right format`);
+        }
+
+        console.log('\n----- Example 7: Number or String Checker -------');
+        let userValue = prompt("Enter a value (number or string):").trim();
+        if (userValue === "") {
+            console.log("You did not enter a value.");
+        } else if (!isNaN(userValue)) {
+            let number = Number(userValue);
+            if (number > 0) {
+                console.log(`${number} is a positive number.`);
+            } else if (number < 0) {
+                console.log(`${number} is a negative number.`);
+            } else {
+                console.log(`${number} is zero.`);
             }
-         console.log('\n----- Example 5: isNaN function in JS------- ')
-         let userinput = prompt( "Enter a number:")
-         let checkinput = isNaN(parseInt(userinput)) // check if the userinput is NOT a numerical value
-        
-         console.log(checkinput)
+        } else {
+            console.log(`"${userValue}" is a string.`);
+        }
 
-         if(checkinput===true){
-            console.log(`${userinput} is NOT a number`)
-         }
-         else {
+        console.log('\n----- Example 8: Color Selection using switch -------');
+        let colorInput = prompt("Enter a letter to select a color:\n(R for Red, G for Green, B for Blue, Y for Yellow)").trim().toUpperCase();
 
-         }
-            console.log(`${userinput} is a number`)
-           
-           
-            console.log('\n----- Example 6: logical operators in JS------- ') 
-            let password = prompt("Enter a password")
-            password = password.trim().toLowerCase() /// remove whitespace before and after the password
-            // test if the password has 6+ characters and no whitespace is between characters
-            if (password.length >= 6 && password.indexOf("")===-1){
-                console.log(`${password} is a valid`)
-
-   
+        if (colorInput) {
+            switch (colorInput) {
+                case 'R':
+                    console.log("You selected Red color.");
+                    break;
+                case 'G':
+                    console.log("You selected Green color.");
+                    break;
+                case 'B':
+                    console.log("You selected Blue color.");
+                    break;
+                case 'Y':
+                    console.log("You selected Yellow color.");
+                    break;
+                default:
+                    console.log("Color is not in the list!");
             }
-            else{
-
-            }
-                console.log(`ERROR! ${password} is NOT at the right format`)
-            
-        
-         
-     </script>
-    
+        } else {
+            console.log("No input provided.");
+        }
+    </script>
 </body>
 </html>
