@@ -1,0 +1,110 @@
+/* Make sure all elements fit well */
+* {
+    box-sizing: border-box;
+    font-family: "Comic Sans MS", "Poppins", cursive; /* Playful font */
+}
+
+/* Background styling for the whole website */
+body {
+    background: linear-gradient(to bottom right, #ffeb3b, #ff80ab); /* Yellow-pink gradient */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Form styling */
+#myform {
+    width: 400px;
+    margin: 3em auto;
+    background-color: #ffcc80; /* Light orange background */
+    padding: 2em;
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    border: 3px solid #ff4081; /* Fun pink border */
+}
+
+/* Fun, large buttons */
+.btnsubmit {
+    width: 100%;
+    background-color: #ff4081; /* Bright pink */
+    color: white;
+    padding: 0.8em;
+    margin-top: 2em;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+.btnsubmit:hover {
+    background-color: #ffeb3b; /* Switches to yellow */
+    color: black;
+    transform: scale(1.1);
+}
+
+/* Button disabled state */
+.btnsubmit:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+    color: white;
+}
+
+/* Greeting section */
+.greeting {
+    width: 400px;
+    margin: auto;
+    display: none;
+    text-align: center;
+    background: #ffeb3b;
+    padding: 1em;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Greeting text */
+.greetuser {
+    color: #ff4081;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+/* Input and form control */
+.formcontrol {
+    margin: 2em;
+}
+
+/* Labels for inputs */
+label {
+    display: inline-block;
+    width: 100%;
+    color: #ff4081;
+    padding: 0.5em;
+    font-size: 1.2em;
+}
+
+/* Error messages */
+.errormsg {
+    color: red;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Add some fun hover animations to form elements */
+input {
+    padding: 0.5em;
+    border-radius: 10px;
+    border: 2px solid #ff4081;
+    outline: none;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    background-color: #ffeb3b;
+    border-color: #ff4081;
+    transform: scale(1.05);
+}
