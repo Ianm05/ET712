@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hooray! Give Learning a Try Today!</title>
+  <link rel="stylesheet" href="Project1.css">
+</head>
+<body>
+  <h1>Welcome Little Explorer!</h1>
+  <h2>Grab your school supplies and let's get learning!</h2> 
+  <a href="#math-section">
+    <button class="btn-click">Let's head to school!</button>
+  </a>
+
+  <section class="maincontainer">
+    <div class="gallerycontainer">
+      <img class="galleryimg" src="https://raw.githubusercontent.com/Ianm05/ET712/refs/heads/main/images%20(1).png">
+      <img class="galleryimg" src="https://raw.githubusercontent.com/Ianm05/ET712/refs/heads/main/Cartoon-blue-pencil-with-school-bag-on-transparent-background-PNG.webp">
+      <img class="galleryimg" src="https://raw.githubusercontent.com/Ianm05/ET712/refs/heads/main/istockphoto-1005793616-612x612.jpg">
+      <img class="galleryimg" src="https://raw.githubusercontent.com/Ianm05/ET712/refs/heads/main/pngtree-cartoon-school-bag-illustration-png-image_6542279.png">
+      <img class="galleryimg" src="https://raw.githubusercontent.com/Ianm05/ET712/refs/heads/main/illustration-of-orange-ruler-free-png.webp">
+    </div>
+    <button class="btnleft">❮</button>
+    <button class="btnright">❯</button>
+  </section>
+
+  <h2 id="math-section" class="learning-header">Welcome! Let's learn some math</h2>
+  <audio id="correctSound" src="https://raw.githubusercontent.com/Ianm05/ET712/main/videoplayback.m4a"></audio>
+
+  <div class="quiz-container">
+    <h3>What is 2 + 3?</h3>
+    <button onclick="checkAnswer1(5)">5 🌟</button>
+    <button onclick="checkAnswer1(4)">4 🐱</button>
+    <button onclick="checkAnswer1(6)">6 🚀</button>
+    <p id="quiz-feedback-1"></p>
+  </div>
+
+  <div class="quiz-container">
+    <h3>What is 4 + 6?</h3>
+    <button onclick="checkAnswer2(10)">10 🎉</button>
+    <button onclick="checkAnswer2(11)">11 🦄</button>
+    <button onclick="checkAnswer2(12)">12 🌈</button>
+    <p id="quiz-feedback-2"></p>
+  </div>
+
+  <div class="quiz-container">
+    <h3>What is 10 - 3?</h3>
+    <button onclick="checkAnswer3(7)">7 🐶</button>
+    <button onclick="checkAnswer3(6)">6 🍎</button>
+    <button onclick="checkAnswer3(5)">5 ⭐</button>
+    <p id="quiz-feedback-3"></p>
+  </div>
+
+  <div class="coloring-section">
+    <h2>🎨 Color the Sun!</h2>
+    <div class="palette">
+      <button onclick="setColor('yellow')">🟡</button>
+      <button onclick="setColor('orange')">🟠</button>
+      <button onclick="setColor('red')">🔴</button>
+      <button onclick="setColor('blue')">🔵</button>
+      <button onclick="setColor('green')">🟢</button>
+      <button onclick="setColor('white')">⚪</button>
+    </div>
+    <svg width="300" height="300" viewBox="0 0 100 100">
+      <circle id="sun-core" cx="50" cy="50" r="20" fill="yellow" onclick="colorPart(this)" />
+      <line x1="50" y1="10" x2="50" y2="0" stroke="orange" stroke-width="4" onclick="colorPart(this)" />
+      <line x1="50" y1="90" x2="50" y2="100" stroke="orange" stroke-width="4" onclick="colorPart(this)" />
+      <line x1="10" y1="50" x2="0" y2="50" stroke="orange" stroke-width="4" onclick="colorPart(this)" />
+      <line x1="90" y1="50" x2="100" y2="50" stroke="orange" stroke-width="4" onclick="colorPart(this)" />
+      <circle cx="44" cy="45" r="2" fill="black" />
+      <circle cx="56" cy="45" r="2" fill="black" />
+      <path d="M42,55 Q50,60 58,55" stroke="black" stroke-width="2" fill="transparent" />
+    </svg>
+  </div>
+
+  <h2>🔷 Guess the Shape!</h2>
+  <div id="shape-container"></div>
+  <div class="guess-buttons">
+    <button onclick="checkShape('Circle')">⭕ Circle</button>
+    <button onclick="checkShape('Square')">🟥 Square</button>
+    <button onclick="checkShape('Triangle')">🔺 Triangle</button>
+    <button onclick="checkShape('Diamond')">🔷 Diamond</button>
+  </div>
+  <p id="shape-feedback"></p>
+  <audio id="correctShapeSound" src="https://raw.githubusercontent.com/Ianm05/ET712/main/Ding%20Sound%20Effect.mp3" type="audio/mp3"></audio>
+  <audio id="wrongSound" src="https://raw.githubusercontent.com/Ianm05/ET712/main/Wrong%20Answer%20Sound%20effect.mp3"></audio>
+
+  <button id="backToTop" class="btn-top">⬆ Back to Top</button>
+
+  <script>
+    // Quiz functions with sound
+    function checkAnswer1(answer) {
+      const feedback = document.getElementById("quiz-feedback-1");
+      feedback.innerHTML = answer === 5 ? "🎉 Correct! Great job!" : "❌ Oops! Try again!";
+      feedback.style.color = answer === 5 ? "green" : "red";
+      if (answer === 5) playSound();
+    }
+
+    function checkAnswer2(answer) {
+      const feedback = document.getElementById("quiz-feedback-2");
+      feedback.innerHTML = answer === 10 ? "🎉 Correct! Great job!" : "❌ Oops! Try again!";
+      feedback.style.color = answer === 10 ? "green" : "red";
+      if (answer === 10) playSound();
+    }
+
+    function checkAnswer3(answer) {
+      const feedback = document.getElementById("quiz-feedback-3");
+      feedback.innerHTML = answer === 7 ? "🎉 Correct! Great job!" : "❌ Oops! Try again!";
+      feedback.style.color = answer === 7 ? "green" : "red";
+      if (answer === 7) playSound();
+    }
+
+    function playSound() {
+      document.getElementById("correctSound").play();
+    }
+
+    // Coloring functions
+    let currentColor = 'yellow';
+    function setColor(color) {
+      currentColor = color;
+    }
+
+    function colorPart(element) {
+      if (element.tagName === 'line') {
+        element.setAttribute('stroke', currentColor);
+      } else {
+        element.setAttribute('fill', currentColor);
+      }
+    }
+
+    // Shape game
+    const shapes = ['Circle', 'Square', 'Triangle', 'Diamond'];
+    let correctShape = '';
+
+    function randomizeShape() {
+      const shapeContainer = document.getElementById('shape-container');
+      shapeContainer.innerHTML = '';
+      const svgNS = "http://www.w3.org/2000/svg";
+      const svg = document.createElementNS(svgNS, "svg");
+      svg.setAttribute("width", "150");
+      svg.setAttribute("height", "150");
+
+      correctShape = shapes[Math.floor(Math.random() * shapes.length)];
+
+      if (correctShape === 'Circle') {
+        const circle = document.createElementNS(svgNS, 'circle');
+        circle.setAttribute('cx', '75');
+        circle.setAttribute('cy', '75');
+        circle.setAttribute('r', '50');
+        circle.setAttribute('fill', 'skyblue');
+        svg.appendChild(circle);
+      } else if (correctShape === 'Square') {
+        const rect = document.createElementNS(svgNS, 'rect');
+        rect.setAttribute('x', '25');
+        rect.setAttribute('y', '25');
+        rect.setAttribute('width', '100');
+        rect.setAttribute('height', '100');
+        rect.setAttribute('fill', 'lightcoral');
+        svg.appendChild(rect);
+      } else if (correctShape === 'Triangle') {
+        const triangle = document.createElementNS(svgNS, 'polygon');
+        triangle.setAttribute('points', '75,20 20,130 130,130');
+        triangle.setAttribute('fill', 'lightgreen');
+        svg.appendChild(triangle);
+     } else if (correctShape === 'Diamond') {
+        const diamond = document.createElementNS(svgNS, 'polygon');
+        diamond.setAttribute('points', '75,20 120,75 75,130 30,75');
+        diamond.setAttribute('fill', 'purple');
+        svg.appendChild(diamond);
+      }
+
+      shapeContainer.appendChild(svg);
+    }
+
+    function checkShape(guess) {
+      const feedback = document.getElementById("shape-feedback");
+      if (guess === correctShape) {
+        feedback.innerHTML = "🎉 You got it!";
+        feedback.style.color = "green";
+        document.getElementById("correctShapeSound").play();
+        setTimeout(randomizeShape, 1000);
+      } else {
+        feedback.innerHTML = "❌ Try again!";
+        feedback.style.color = "red";
+        document.getElementById("wrongSound").play();
+      }
+    }
+
+    // Gallery functionality
+    let currentImageIndex = 0;
+    const images = document.querySelectorAll('.galleryimg');
+    function updateGallery() {
+      images.forEach((img, index) => {
+        img.style.display = index === currentImageIndex ? 'block' : 'none';
+      });
+    }
+
+    document.querySelector('.btnleft').addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      updateGallery();
+    });
+
+    document.querySelector('.btnright').addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      updateGallery();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateGallery();
+      randomizeShape();
+      
+      
+    });
+  </script>
+</body>
+</html>
