@@ -1,0 +1,257 @@
+body {
+    background-image: url('https://raw.githubusercontent.com/Ianm05/ET712/refs/heads/main/classroom-interior-school-or-college-room-vector-25503608.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: -1;
+}
+
+
+  
+h1 {
+    text-align: center;
+    color: #ff4500; /* Bright Orange-Red */
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    font-size: 2.5em;
+}
+
+h2 {
+    text-align: center;
+    color: #00ff55; /* Vibrant Blue */
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    font-size: 2em;
+}
+
+/* 🖼️ Gallery Container */
+.gallerycontainer {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    border: 5px solid #ff6699;
+    border-radius: 20px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    background: white;
+}
+
+/* 🖼️ Images */
+.galleryimg {
+    width: 100%;
+    display: none;
+    transition: opacity 0.8s ease-in-out;
+    border-radius: 20px;
+}
+
+.galleryimg.active {
+    display: block;
+}
+
+/* 🎭 Navigation Buttons */
+.btnleft, .btnright {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(to bottom, #ffcc00, #ff6600);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 🚀 Hover Effects */
+.btnleft:hover, .btnright:hover {
+    background: linear-gradient(to bottom, #ff3300, #ff9900);
+    transform: scale(1.2);
+}
+
+/* ⬅️ Left Button */
+.btnleft { 
+    left: 10px;
+}
+
+/* ➡️ Right Button */
+.btnright { 
+    right: 10px;
+}
+
+/* 🌟 Add a Bouncing Effect */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.btnleft:hover, .btnright:hover {
+    animation: bounce 0.5s ease-in-out infinite;
+}
+ 
+
+.btn-click {
+    background: linear-gradient(to right, #ff66b2, #ffcc00);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-click:hover {
+    background: linear-gradient(to right, #ffcc00, #ff66b2);
+    transform: scale(1.1);
+}
+    
+
+.btn-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #ffcc00, #ff6699);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background: 0.3s;
+    display: none; /* Hidden by default */
+}
+
+.btn-top:hover {
+    background: linear-gradient(to right, #ff6699, #ffcc00);
+    transform: scale(1.1);
+}
+
+.learning-header {
+    color: #007bff; /* A brighter blue */
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds a shadow */
+}
+
+
+
+#math-section {
+    text-align: center;
+  }
+  
+  .quiz-container {
+    width: 50%; 
+    margin: 0 auto; 
+    text-align: center; 
+    padding: 20px; 
+  }
+  
+  
+  .quiz-container button {
+    margin: 5px; /* Adds space between buttons */
+  }
+  .coloring-section {
+    text-align: center; /* Center the text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.shape-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+  }
+  
+  .guess-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .guess-buttons button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .guess-buttons button:hover {
+    background-color: #45a049; /* Darker green */
+  }
+  
+  .guess-buttons button:active {
+    background-color: #3e8e41; /* Even darker on click */
+  }
+  
+  #shape-container {
+    margin-bottom: 20px;
+  }
+  
+  #shape-feedback {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+.palette {
+    margin-bottom: 20px;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Add this to keep the Back to Top button at the bottom */
+  .btn-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #ffcc00, #ff6699);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: none; /* Initially hidden */
+  }
+  
+
