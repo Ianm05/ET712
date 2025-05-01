@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  color: brown;
+  padding: 1em;
+}
+
+/* SLICE APP */
+.slicewrapper {
+  width: 600px;
+  margin: 2rem auto;
+  box-shadow: 1px 1px 5px lightgray;
+}
+
+.numberwrapper {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  background-color: lightblue;
+  color: white;
+}
+
+.numberwrapper > div {
+  border: solid gray 1px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 3rem;
+}
+
+.msg {
+  text-align: center;
+  font-weight: bold;
+}
+
+.btngroup {
+  display: flex;
+  justify-content: space-evenly;
+}
+.btngroup > button {
+  background-color: orangered;
+  color: white;
+  border: none;
+  padding:0.5rem 1rem;
+  border-radius: 10px;
+}
+.btngroup>button:hover {
+  background-color: darkblue;
+  box-shadow: 1px 1px 5px gray;
+}
+/*OPEN AND CLOSE BUTTON*/
+.readmore_btn{
+margin-left: 1rem;
+background-color: orangered;
+padding: 0.2rem 0.5rem;
+border: none;
+color:white;
+border-radius: 5px;
+}
+.hiddentext p{
+  width: 900px;
+  padding: 2rem;
+  background-color: aliceblue;
+  margin:auto;
+}
